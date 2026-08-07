@@ -11,7 +11,6 @@ class Usuario:
         self.contraseña = contraseña
         self.fecha_registro = fecha_registro
         self.fk_asesor = fk_asesor
-
     def get_id_usuario(self):
         return self.id_usuario
 
@@ -41,3 +40,17 @@ class Usuario:
 
     def get_fk_asesor(self):
         return self.fk_asesor
+    
+    def __str__(self):
+        return (f"{self.id_usuario}, {self.nombre}, {self.apellido_paterno}, {self.apellido_materno}, {self.correo}, {self.disponible}, {self.telefono}, {self.fecha_registro}")
+
+    def __repr__(self):
+        return self.__str__()
+
+    def to_tuple(self): 
+        return (self.id_usuario, self.nombre, self.apellido_paterno, self.apellido_materno,
+                self.correo, self.disponible, self.telefono,
+                self.contraseña, self.fecha_registro, self.fk_asesor)
+
+    def Nombre_Usuario(self): #Retorna el nombre del usuario#
+        return (f"{self.nombre} {self.apellido_paterno} {self.apellido_materno}")
