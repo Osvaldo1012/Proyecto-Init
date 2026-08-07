@@ -41,16 +41,19 @@ class Usuario:
     def get_fk_asesor(self):
         return self.fk_asesor
     
-    def __str__(self):
+    def __str__(self): #Retorna La Informacion De Usuario Para Los Administradores# 
         return (f"{self.id_usuario}, {self.nombre}, {self.apellido_paterno}, {self.apellido_materno}, {self.correo}, {self.disponible}, {self.telefono}, {self.fecha_registro}")
 
-    def __repr__(self):
+    def __repr__(self): #Regresa El Metodo Str De Manera Legible Para Usuario#
         return self.__str__()
 
-    def to_tuple(self): 
+    def to_tuple(self): #Vuelve Los Datos Ingresados En Datos Usables En La Base De Datos#
         return (self.id_usuario, self.nombre, self.apellido_paterno, self.apellido_materno,
                 self.correo, self.disponible, self.telefono,
                 self.contraseña, self.fecha_registro, self.fk_asesor)
 
-    def Nombre_Usuario(self): #Retorna el nombre del usuario#
+    def Nombre_Usuario(self): #Retorna El Nombre Del Asesor Para Los Usuarios#
         return (f"{self.nombre} {self.apellido_paterno} {self.apellido_materno}")
+
+    def Nombre_Asesor(self): #Retorna El Nombre Para Los Administradores#
+        return (f"{self.id_usuario}, {self.nombre} {self.apellido_paterno} {self.apellido_materno}, {self.correo}, {self.telefono}")
